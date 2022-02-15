@@ -26,10 +26,10 @@ function createSortableOption({ $attrs, callBackBuilder }) {
       options[`on${event}`] = eventBuilder(event);
     });
   });
-  const draggable = `[data-draggable]${options.draggable || ""}`;
+  console.log('赋值')
+  // const draggable = `[data-draggable]${options.draggable || ""}`;
   return {
-    ...options,
-    draggable
+    ...options
   };
 }
 

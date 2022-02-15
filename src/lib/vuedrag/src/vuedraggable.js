@@ -132,6 +132,7 @@ const draggableComponent = defineComponent({
         manage: event => manage.call(this, event)
       }
     });
+    console.log("执行了");
     const targetDomElement = $el.nodeType === 1 ? $el : $el.parentElement;
     this._sortable = new Sortable(targetDomElement, sortableOptions);
     this.targetDomElement = targetDomElement;
@@ -231,8 +232,10 @@ const draggableComponent = defineComponent({
     },
 
     onDragStart(evt) {
+      console.log(evt);
+      debugger;
       this.context = this.getUnderlyingVm(evt.item);
-      evt.item._underlying_vm_ = this.clone(this.context.element);
+      evt.item._underlying_vm_ = this.clone(this.context?.element);
       draggingElement = evt.item;
     },
 
